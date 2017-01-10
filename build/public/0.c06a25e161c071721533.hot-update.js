@@ -1,0 +1,10 @@
+webpackHotUpdate(0,{
+
+/***/ 9:
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _vue = __webpack_require__(2);\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _vueRouter = __webpack_require__(21);\n\nvar _vueRouter2 = _interopRequireDefault(_vueRouter);\n\nvar _routes = __webpack_require__(7);\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nvar _routes3 = __webpack_require__(8);\n\nvar _routes4 = _interopRequireDefault(_routes3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\nvar router = new _vueRouter2.default({\n    mode: 'history',\n    routes: [].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default))\n});\n\nexports.default = router;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jbGllbnQvcm91dGVyLmpzPzljOTciXSwibmFtZXMiOlsicm91dGVyIiwibW9kZSIsInJvdXRlcyJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUVBOzs7O0FBQ0E7Ozs7Ozs7O0FBRUEsSUFBTUEsU0FBUyx3QkFBYztBQUN6QkMsVUFBTSxTQURtQjtBQUV6QkM7QUFGeUIsQ0FBZCxDQUFmOztrQkFRZUYsTSIsImZpbGUiOiI5LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFZ1ZSBmcm9tICd2dWUnO1xuaW1wb3J0IFZ1ZVJvdXRlciBmcm9tICd2dWUtcm91dGVyJztcblxuaW1wb3J0IGhvbWVSb3V0ZXMgZnJvbSAnLi9tb2R1bGVzL2hvbWUvcm91dGVzJztcbmltcG9ydCBzaG93c1JvdXRlcyBmcm9tICcuL21vZHVsZXMvc2hvd3Mvcm91dGVzJztcblxuY29uc3Qgcm91dGVyID0gbmV3IFZ1ZVJvdXRlcih7XG4gICAgbW9kZTogJ2hpc3RvcnknLFxuICAgIHJvdXRlczogW1xuICAgICAgICAuLi5ob21lUm91dGVzLFxuICAgICAgICAuLi5zaG93c1JvdXRlc1xuICAgIF1cbn0pO1xuXG5leHBvcnQgZGVmYXVsdCByb3V0ZXI7XG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vY2xpZW50L3JvdXRlci5qcyJdLCJzb3VyY2VSb290IjoiIn0=");
+
+/***/ }
+
+})

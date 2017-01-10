@@ -1,0 +1,8 @@
+webpackHotUpdate(0,[
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	eval("'use strict';\n\nvar _vue = __webpack_require__(2);\n\nvar _vue2 = _interopRequireDefault(_vue);\n\nvar _Core = __webpack_require__(15);\n\nvar _Core2 = _interopRequireDefault(_Core);\n\nvar _store = __webpack_require__(10);\n\nvar _store2 = _interopRequireDefault(_store);\n\nvar _router = __webpack_require__(9);\n\nvar _router2 = _interopRequireDefault(_router);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nnew _vue2.default({\n    el: '#app',\n    router: _router2.default,\n    store: _store2.default,\n    template: '<Core></Core>',\n    components: { Core: _Core2.default }\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jbGllbnQvYXBwLmpzPzI3ZTEiXSwibmFtZXMiOlsiZWwiLCJyb3V0ZXIiLCJzdG9yZSIsInRlbXBsYXRlIiwiY29tcG9uZW50cyIsIkNvcmUiXSwibWFwcGluZ3MiOiI7O0FBQUE7Ozs7QUFFQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztBQUVBLGtCQUFRO0FBQ0pBLFFBQUksTUFEQTtBQUVKQyw0QkFGSTtBQUdKQywwQkFISTtBQUlKQyw2QkFKSTtBQUtKQyxnQkFBWSxFQUFFQyxvQkFBRjtBQUxSLENBQVIiLCJmaWxlIjoiMC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBWdWUgICAgICAgICBmcm9tICd2dWUnO1xuXG5pbXBvcnQgQ29yZSAgICAgIGZyb20gJy4vbW9kdWxlcy9jb3JlL0NvcmUnO1xuaW1wb3J0IHN0b3JlICAgICBmcm9tICcuL3N0b3JlJztcbmltcG9ydCByb3V0ZXIgICAgZnJvbSAnLi9yb3V0ZXInO1xuXG5uZXcgVnVlKHtcbiAgICBlbDogJyNhcHAnLFxuICAgIHJvdXRlcixcbiAgICBzdG9yZSxcbiAgICB0ZW1wbGF0ZTogYDxDb3JlPjwvQ29yZT5gLFxuICAgIGNvbXBvbmVudHM6IHsgQ29yZSB9XG59KTtcblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gLi9jbGllbnQvYXBwLmpzIl0sInNvdXJjZVJvb3QiOiIifQ==");
+
+/***/ }
+])
