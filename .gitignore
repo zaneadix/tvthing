@@ -1,5 +1,5 @@
 # bin folder (compiled js code)
-dist
+build
 
 # RAML Generated API docs
 api.html

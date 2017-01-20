@@ -6,6 +6,9 @@ module.exports = {
     PUBLIC_DIR: '/public',
     TMDB: {
         API_KEY: '5cd6e5981ac26bf54e287b3840235c1e',
-        HOST: 'https://api.themoviedb.org/3'
-    }
+        HOST: 'https://api.themoviedb.org/3',
+        CACHE_CONFIG: {
+            INTERVAL: '0 0 */4 * * *'
+        }
+    },
 };

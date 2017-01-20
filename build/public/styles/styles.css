@@ -4989,3 +4989,6 @@ a.panel-block:hover {
 #show-detail .hero[data-v-ec2c8b8a] {
   background-size: cover;
 }
+#show-detail .hero .nav-left .nav-item[data-v-ec2c8b8a] {
+    background-color: whitesmoke;
+}

@@ -1,36 +1,26 @@
-import Vue                from 'vue';
-import Vuex               from 'vuex';
+import Vue  from 'vue';
+import Vuex from 'vuex';
 
-import * as discoverActions   from './modules/discover/store/actions';
-import * as discoverMutations from './modules/discover/store/mutations';
-
-import * as showActions   from './modules/show/store/actions';
-import * as showMutations from './modules/show/store/mutations';
+import discoverModule from './modules/discover/store';
+import showModule from './modules/show/store';
 
 Vue.use(Vuex);
 
 const state = {
-    count: 0,
-    discover: {
-        loading: false,
-        results: []
-    },
-    show: {
-        current: '',
-        details: {}
-    },
-    history: []
+    history: [],
+    ...discoverModule.state,
+    ...showModule.state
 }
 
-const actions = Object.assign({},
-    discoverActions,
-    showActions
-);
+const actions = {
+    ...discoverModule.actions,
+    ...showModule.actions
+}
 
-const mutations = Object.assign({},
-    discoverMutations,
-    showMutations
-);
+const mutations = {
+    ...discoverModule.mutations,
+    ...showModule.mutations
+}
 
 const store = new Vuex.Store({
     state,

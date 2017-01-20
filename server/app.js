@@ -3,7 +3,10 @@ import bodyParser from 'koa-body';
 import koaConvert from 'koa-convert';
 import koaStatic  from 'koa-static';
 import helmet     from 'koa-helmet';
+import mongoose   from 'koa-mongoose';
 import render     from 'koa-ejs';
+import redisStore from 'koa-redis';
+import session    from 'koa-generic-session';
 import winston    from 'winston';
 import co         from 'co';
 import path       from 'path';
@@ -11,7 +14,8 @@ import path       from 'path';
 import api                from './routes/api';
 import { errorResponder } from './middleware/error-responder';
 import { REQUEST_LOGS,
-         PUBLIC_DIR }     from './project-env';
+         PUBLIC_DIR,
+         MONGO }     from './project-env';
 
 export const app = new Koa();
 
@@ -24,14 +28,22 @@ if (REQUEST_LOGS) {
 
 // Use ejs for rendering
 render(app, {
-  root: path.join(__dirname, 'templates'),
-  layout: 'layout',
-  viewExt: 'html',
-  cache: false,
-  debug: true
+    root: path.join(__dirname, 'templates'),
+    layout: 'layout',
+    viewExt: 'html',
+    cache: false,
+    debug: true
 });
 
 app.context.render = co.wrap(app.context.render);
+
+
+app.keys = ['keys', 'keyskeys'];
+app.use(session({
+    store: redisStore({})
+}));
+
+app.use(mongoose(MONGO));
 
 
 // put it all together

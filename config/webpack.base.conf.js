@@ -63,7 +63,9 @@ module.exports = {
     },
     sassLoader: {
         includePaths: [
-            path.resolve(__dirname + '/../node_modules/bulma')
+            path.resolve(__dirname + '/../node_modules/bulma'),
+            path.resolve(__dirname + '/../node_modules/bulma/sass/utilities'),
+            path.resolve(__dirname + '/../client/modules/core/styles')
         ]
     },
     vue: {
