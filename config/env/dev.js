@@ -12,16 +12,6 @@ module.exports = {
         }
     },
     MONGO: {
-        username: '',
-        password: '',
-        host: '127.0.0.1',
-        port: 27017,
-        database: 'test',
-        db: {
-            native_parser: true
-        },
-        server: {
-            poolSize: 5
-        }
-    }
+        URL: 'mongodb://zaneadix:013187za@jello.modulusmongo.net:27017/uvyg6yrE'
+    },
 };

@@ -4967,12 +4967,36 @@ a.panel-block:hover {
 .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
         border-bottom-color: #00d1b2;
 }
+.is-error {
+  margin: 0;
+  color: #ff3860;
+}
 .container, .container-fluid {
   padding-left: 20px;
   padding-right: 20px;
 }
 .has-content-pad {
   padding-top: 20px;
+}
+
+#sign-up[data-v-64c88c2a] {
+  display: flex;
+  min-height: 80vh;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+#sign-up #sign-up-form[data-v-64c88c2a] {
+    min-width: 500px;
+}
+#sign-up #sign-up-form .control p.is-error[data-v-64c88c2a] {
+      margin-bottom: 1em;
+}
+#sign-up #sign-up-form .control button[data-v-64c88c2a] {
+      display: block;
+      margin: 0 auto;
+      width: 80%;
 }
 
 #discover-shows .show-card[data-v-27de86bb] {
