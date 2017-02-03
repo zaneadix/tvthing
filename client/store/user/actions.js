@@ -16,9 +16,9 @@ export const signUp = ({commit, state}, details) => {
             return response;
         })
         .catch(error => {
-            console.log(error);
+            console.log(error.response);
             commit('authenticateFailure');
-            return error;
+            return error.response;
         });
 }
 

@@ -4979,7 +4979,7 @@ a.panel-block:hover {
   padding-top: 20px;
 }
 
-#sign-up[data-v-64c88c2a] {
+#sign-up[data-v-1b914afc] {
   display: flex;
   min-height: 80vh;
   -webkit-align-items: center;
@@ -4987,32 +4987,81 @@ a.panel-block:hover {
   -webkit-justify-content: center;
   justify-content: center;
 }
-#sign-up #sign-up-form[data-v-64c88c2a] {
+#sign-up #sign-up-form[data-v-1b914afc] {
     min-width: 500px;
 }
-#sign-up #sign-up-form .control p.is-error[data-v-64c88c2a] {
+#sign-up #sign-up-form .control p.is-error[data-v-1b914afc] {
       margin-bottom: 1em;
 }
-#sign-up #sign-up-form .control button[data-v-64c88c2a] {
+#sign-up #sign-up-form .control p.error-response[data-v-1b914afc] {
+      text-align: center;
+}
+#sign-up #sign-up-form .control button[data-v-1b914afc] {
       display: block;
       margin: 0 auto;
       width: 80%;
 }
 
-#discover-shows .show-card[data-v-27de86bb] {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#discover-shows .show-card[data-v-450f1a12] {
   border: 1px solid #C2C2C2;
   border-radius: 5px;
   background-color: #FFF;
   overflow: hidden;
   cursor: pointer;
 }
-#discover-shows .show-card .details[data-v-27de86bb] {
+#discover-shows .show-card .details[data-v-450f1a12] {
     padding: .5em;
 }
 
-#show-detail .hero[data-v-ec2c8b8a] {
+#show-detail .hero[data-v-355ad6dc] {
   background-size: cover;
 }
-#show-detail .hero .nav-left .nav-item[data-v-ec2c8b8a] {
+#show-detail .hero .nav-left .nav-item[data-v-355ad6dc] {
     background-color: whitesmoke;
 }

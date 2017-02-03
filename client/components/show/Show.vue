@@ -55,10 +55,6 @@
 
         name: 'Show',
 
-        // components: {
-        //     Seasons
-        // },
-
         created: function () {
             this.retrieveShowDetail(this.$route.params.id);
         },
@@ -90,8 +86,8 @@
 
 <style lang="scss" scoped>
 
-    @import 'core-vars';
-    @import 'variables';
+    @import 'styles/core-vars';
+    @import 'bulma/sass/utilities/variables';
     
     #show-detail {
 

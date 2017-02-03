@@ -22,7 +22,7 @@
 
 <style lang="scss">
     
-    @import 'bulma';
-    @import './styles/layout';
+    @import 'bulma/bulma';
+    @import 'styles/layout';
 
 </style>

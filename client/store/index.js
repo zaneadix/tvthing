@@ -1,27 +1,27 @@
 import Vue  from 'vue';
 import Vuex from 'vuex';
 
-import authModule     from './modules/auth/store';
-import discoverModule from './modules/discover/store';
-import showModule     from './modules/show/store';
+import userModule     from './user';
+import discoverModule from './discover';
+import showModule     from './show';
 
 Vue.use(Vuex);
 
 const state = {
     history: [],
-    ...authModule.state,
+    ...userModule.state,
     ...discoverModule.state,
     ...showModule.state
 }
 
 const actions = {
-    ...authModule.actions,
+    ...userModule.actions,
     ...discoverModule.actions,
     ...showModule.actions
 }
 
 const mutations = {
-    ...authModule.mutations,
+    ...userModule.mutations,
     ...discoverModule.mutations,
     ...showModule.mutations
 }

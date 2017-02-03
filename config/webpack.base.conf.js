@@ -8,11 +8,6 @@ var env = process.env.NODE_ENV
 // var cssSourceMapProd = (env === 'production' && settings.build.productionSourceMap)
 // var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-
-// var bulba = require('bulma');
-// console.log(bulma);
-console.log(path.resolve(__dirname + '/../node_modules/bulma'));
-
 module.exports = {
     entry: {
         app: './client/app.js'
@@ -63,9 +58,10 @@ module.exports = {
     },
     sassLoader: {
         includePaths: [
-            path.resolve(__dirname + '/../node_modules/bulma'),
-            path.resolve(__dirname + '/../node_modules/bulma/sass/utilities'),
-            path.resolve(__dirname + '/../client/modules/core/styles')
+            // path.resolve(__dirname + '/../node_modules/bulma/'),
+            utils.root('node_modules'),
+            utils.root('client')
+            // path.resolve(__dirname + '/../client/')
         ]
     },
     vue: {

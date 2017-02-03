@@ -2,6 +2,8 @@ var path = require('path')
 var settings = require('./webpack.settings')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+var _root = path.resolve(__dirname, '..');
+
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? settings.build.assetsSubDirectory
@@ -58,4 +60,9 @@ exports.styleLoaders = function (options) {
     })
   }
   return output
+}
+
+exports.root = function (args) {
+  args = Array.prototype.slice.call(arguments, 0);
+  return path.join.apply(path, [_root].concat(args));
 }

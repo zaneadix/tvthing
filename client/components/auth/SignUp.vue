@@ -48,6 +48,7 @@
                         v-on:click.capture="submit">
                     {{ buttonText() }}
                 </button>
+                <p class="error-response is-error">{{ failure ? failureMessage : '&nbsp'}}</p>
             </div>
 
         </form>
@@ -70,11 +71,12 @@
                 email: '',
                 username: '',
                 password: '',
-                defaultMessage: 'Sign the fuck up',
+                defaultButtonText: 'Sign the fuck up',
                 success: false,
-                successMessage: 'You signed the fuck up!',
+                successButtonText: 'You signed the fuck up!',
                 failure: false,
-                failureMessage: 'Oh, bad. Your fault!'
+                failureButtonText: 'Derp',
+                failureMessage: ''
             }
         },
 
@@ -88,10 +90,15 @@
 
             buttonText: function () {
                 if (!this.success && !this.failure) {
-                    return this.defaultMessage;
+                    return this.defaultButtonText;
                 } else {
-                    return this.success ? this.successMessage : this.failureMessage;
+                    return this.success ? this.successButtonText : this.failureButtonText;
                 }
+            },
+
+            directToAccount: function () {
+                console.log('directing');
+                this.$router.push('account');
             },
 
             submit: function () {
@@ -101,13 +108,14 @@
                     password: this.password
                 })
                 .then((response) => {
-                    console.log(response.statusText);
                     if (response.status == 200) {
                         this.failure = false;
                         this.success = true;
+                        this.directToAccount();
                     } else {
                         this.failure = true;
                         this.success = false;
+                        this.failureMessage = response.data;
                     }
                 });
             },
@@ -137,6 +145,10 @@
                 
                 p.is-error {
                     margin-bottom: 1em;
+                }
+
+                p.error-response {
+                    text-align: center;
                 }
 
                 button {

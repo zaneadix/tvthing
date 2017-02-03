@@ -1,6 +1,6 @@
-import Show from './Show';
-import Seasons from './Seasons';
-import Overview from './Overview';
+import Show from '../../components/show/Show';
+import Seasons from '../../components/show/Seasons';
+import Overview from '../../components/show/Overview';
 
 const showRoutes = [
     { 
