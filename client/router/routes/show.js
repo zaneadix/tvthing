@@ -11,9 +11,11 @@ const showRoutes = [
             redirect: 'overview'
         },{
             path: 'overview',
+            name: 'show-overview',
             component: Overview
         },{
             path: 'episodes',
+            name: 'show-episodes',
             component: Seasons
         }]
     }

@@ -3,9 +3,11 @@ import Account from '../../components/user/Account';
 
 const userRoutes = [{ 
     path: '/user-profile/:username',
+    name: 'user-profile',
     component: UserProfile
 },{
     path: '/account',
+    name: 'account',
     component: Account
 }]
 

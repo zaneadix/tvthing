@@ -4979,7 +4979,7 @@ a.panel-block:hover {
   padding-top: 20px;
 }
 
-#sign-up[data-v-1b914afc] {
+#auth[data-v-7604b01f] {
   display: flex;
   min-height: 80vh;
   -webkit-align-items: center;
@@ -4987,20 +4987,107 @@ a.panel-block:hover {
   -webkit-justify-content: center;
   justify-content: center;
 }
-#sign-up #sign-up-form[data-v-1b914afc] {
+#auth .auth-form[data-v-7604b01f] {
     min-width: 500px;
 }
-#sign-up #sign-up-form .control p.is-error[data-v-1b914afc] {
+#auth .auth-form .control p.is-error[data-v-7604b01f] {
       margin-bottom: 1em;
 }
-#sign-up #sign-up-form .control p.error-response[data-v-1b914afc] {
+#auth .auth-form .control p.error-response[data-v-7604b01f] {
       text-align: center;
 }
-#sign-up #sign-up-form .control button[data-v-1b914afc] {
+#auth .auth-form .control button[data-v-7604b01f] {
       display: block;
       margin: 0 auto;
       width: 80%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

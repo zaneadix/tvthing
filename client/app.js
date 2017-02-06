@@ -7,10 +7,20 @@ import router    from './router';
 
 Vue.use(VeeValidate);
 
+// Define event bus for 
+// VERY SIMPLE COMMUNICATIONS ONLY
+const bus = new Vue({});
+Object.defineProperty(Vue.prototype, '$bus', {
+    get () {
+        return this.$root.bus;
+    }
+});
+
 new Vue({
     el: '#app',
     router,
     store,
     template: `<Core></Core>`,
-    components: { Core }
+    components: { Core },
+    data: { bus }
 });

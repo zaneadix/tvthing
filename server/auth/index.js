@@ -56,29 +56,27 @@ passport.use('sign-up', new LocalStrategy({ passReqToCallback: true }, (request,
                 username,
                 password: hashPassword(password),
                 email: request.body.email
-            });
+            })
             user.save((error) => {
                 if (error) {
                     let error = createError(500, 'User creation failure.');
                     return done(error, false);
                 }
-                return done(null, user);
+                return done(null, user.toJSON());
             });
         }
     });
 }));
 
 passport.use('sign-in', new LocalStrategy({ passReqToCallback: true }, (request, username, password, done) => {
-    User.findOne({username}, (error, user) => {
+    User.findOne({ $or: [{username}, {email: username}] }, (error, user) => {
         if (error) {
             return done(error);
         }
-        if (!user) {
-            
-            return done(null, false, request.flash('message', 'User not found'));
-        }
-        if (!validatePassword(user, password)) {
-            return done(null, false, request.flash('message', 'Invalid password'));
+        let failure = false;
+        if (!user || !validatePassword(user, password)) {
+            let error = createError(403, 'Invalid credentials');
+            return done(error, false);
         }
         return done(null, user);
     });

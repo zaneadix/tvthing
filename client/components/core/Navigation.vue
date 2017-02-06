@@ -8,6 +8,7 @@
             
             <div class="nav-right nav-menu">
                 <router-link to="/shows" class="nav-item">Shows</router-link>
+                <router-link to="/sign-in" class="nav-item">Sign In</router-link>
                 <router-link to="/sign-up" class="nav-item">Sign Up</router-link>
             </div>
         </div>

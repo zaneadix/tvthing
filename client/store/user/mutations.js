@@ -14,7 +14,7 @@ export const authenticateFailure = (state) => {
 
 export const recieveUser = (state, user) => {
 
-    Vue.set(state.user, 'account', user);
+    Vue.set(state.user, 'account', Object.assign(new User(), user));
     Vue.set(state.user, 'authenticating', false);
 }
 
