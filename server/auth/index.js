@@ -20,8 +20,8 @@ function hashPassword (password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 }
 
-function validatePassword (username, password) {
-    return bcrypt.compareSync(username.password, password);
+function validatePassword (user, password) {
+    return bcrypt.compareSync(password, user.password);
 }
 
 passport.serializeUser((user, done) => {
@@ -29,6 +29,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
+    console.log('deserialize', id)
     try {
         const user = await fetchUser();
         done(null, user);
@@ -69,11 +70,12 @@ passport.use('sign-up', new LocalStrategy({ passReqToCallback: true }, (request,
 }));
 
 passport.use('sign-in', new LocalStrategy({ passReqToCallback: true }, (request, username, password, done) => {
+    console.log(username, password);
     User.findOne({ $or: [{username}, {email: username}] }, (error, user) => {
         if (error) {
             return done(error);
         }
-        let failure = false;
+        let validPassword = validatePassword(user, password);
         if (!user || !validatePassword(user, password)) {
             let error = createError(403, 'Invalid credentials');
             return done(error, false);
