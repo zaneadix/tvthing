@@ -18,7 +18,6 @@ UserSchema.methods.toJSON = function () {
     delete object.password;
     delete object.__v;
     delete object._id;
-    console.log(object);
     return object;
 }
 

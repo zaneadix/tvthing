@@ -25,17 +25,15 @@ function validatePassword (user, password) {
 }
 
 passport.serializeUser((user, done) => {
-    done(user.id);
+    console.log('SERIALIZE', user.id);
+    done(null, user.id);
 });
 
-passport.deserializeUser(async (id, done) => {
-    console.log('deserialize', id)
-    try {
-        const user = await fetchUser();
-        done(null, user);
-    } catch (error) {
-        done(error);
-    }
+passport.deserializeUser((id, done) => {
+    console.log('DESERIALIZE', id);
+    User.findById(id, (error, user) => {
+        done(error, user);
+    });
 });
 
 passport.use('sign-up', new LocalStrategy({ passReqToCallback: true }, (request, username, password, done) => {
@@ -70,7 +68,6 @@ passport.use('sign-up', new LocalStrategy({ passReqToCallback: true }, (request,
 }));
 
 passport.use('sign-in', new LocalStrategy({ passReqToCallback: true }, (request, username, password, done) => {
-    console.log(username, password);
     User.findOne({ $or: [{username}, {email: username}] }, (error, user) => {
         if (error) {
             return done(error);
