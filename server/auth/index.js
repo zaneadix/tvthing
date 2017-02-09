@@ -1,20 +1,12 @@
 import passport    from 'koa-passport';
 import convert     from 'koa-convert';
+import session     from 'koa-generic-session';
 import local       from 'passport-local';
 import bcrypt      from 'bcrypt';
 import createError from 'http-errors';
-import co          from 'co';
 import User        from '../models/user';
 
 const LocalStrategy = local.Strategy;
-
-function fetchUser () {
-
-    const user = { id: 1, username: 'test', password: 'test' }
-    return async function() {
-        return user
-    }
-};
 
 function hashPassword (password){
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
@@ -82,6 +74,7 @@ passport.use('sign-in', new LocalStrategy({ passReqToCallback: true }, (request,
 }));
 
 export default (app) => {
+    app.use(convert(session()));
     app.use(convert(passport.initialize()));
     app.use(convert(passport.session()));
 }

@@ -5,7 +5,6 @@ import koaStatic  from 'koa-static';
 import helmet     from 'koa-helmet';
 import render     from 'koa-ejs';
 import redisStore from 'koa-redis';
-import session    from 'koa-generic-session';
 import mongoose   from 'mongoose';
 import winston    from 'winston';
 import path       from 'path';
@@ -14,6 +13,7 @@ import co         from 'co';
 import api                from './routes/api';
 import setupAuth          from './auth';
 import { errorResponder } from './middleware/error-responder';
+import { indexLoader }    from './middleware/index-loader';
 import { REQUEST_LOGS,
          PUBLIC_DIR,
          MONGO }     from './project-env';
@@ -48,21 +48,15 @@ app.context.render = co.wrap(app.context.render);
 //     store: redisStore({})
 // })));
 
-setupAuth(app);
-
 // put it all together
-app.use(convert(session()))
-    .use(helmet())
-    .use(koaStatic(__dirname + PUBLIC_DIR))
-    .use(convert(bodyParser()))
-    .use(errorResponder)
-    .use(api.routes())
-    .use(api.allowedMethods())
-    .use(async (ctx, next) => {
-        if (!ctx.body) {
-            await ctx.render('index');
-        }
-    });
+setupAuth(app);
+app.use(helmet());
+app.use(koaStatic(__dirname + PUBLIC_DIR));
+app.use(convert(bodyParser()));
+app.use(errorResponder);
+app.use(api.routes());
+app.use(api.allowedMethods());
+app.use(indexLoader);
 
 /* istanbul ignore if */
 if (require.main === module) {

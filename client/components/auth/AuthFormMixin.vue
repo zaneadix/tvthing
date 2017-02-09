@@ -26,6 +26,7 @@
             submit: function () {
                 this.authenticate(this.getData())
                     .then((response) => {
+                        console.log(response);
                         if (response.status == 200) {
                             this.failure = false;
                             this.success = true;

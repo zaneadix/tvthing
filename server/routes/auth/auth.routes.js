@@ -28,6 +28,11 @@ export const authRouter = koaRouter()
         })(ctx, next);
     })
 
+    .post('/sign-out', (ctx, next) => {
+        ctx.logout();
+        ctx.body = { success: true };
+    })
+
     // .post('/sign-out', async (ctx, next) => {
     //     return passport.authenticate('sign-in', (error, user) => {
     //         if (error) {
@@ -43,7 +48,7 @@ export const authRouter = koaRouter()
 
     // })
 
-    .get('/is-authenticated', async (ctx, next) => {
+    .get('/is-authenticated', (ctx, next) => {
         if (ctx.isAuthenticated()) {
             ctx.body = {authenticated: true}
         } else {
