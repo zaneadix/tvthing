@@ -1,20 +1,13 @@
 import Vue  from 'vue';
 import Vuex from 'vuex';
 
+import state   from '../../shared/data/state';
 import coreModule     from './core';
 import userModule     from './user';
 import discoverModule from './discover';
 import showModule     from './show';
 
 Vue.use(Vuex);
-
-const state = {
-    history: [],
-    ...coreModule.state,
-    ...userModule.state,
-    ...discoverModule.state,
-    ...showModule.state
-}
 
 const actions = {
     ...coreModule.actions,

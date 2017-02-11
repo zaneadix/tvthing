@@ -4,7 +4,6 @@ export class Show {
         this.loading = false;
         this.failed = false;
         this.id = id;
-
         this.backdrop_path = '';
         this.created_by = [];
         this.episode_run_time = [];

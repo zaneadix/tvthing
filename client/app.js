@@ -17,21 +17,13 @@ Object.defineProperty(Vue.prototype, '$bus', {
 });
 
 new Vue({
-
     el: '#app',
-
     router,
-
     store,
-
     template: `<Core></Core>`,
-
     components: { Core },
-
     data: { bus },
-
     created () {
-
-        this.$store.dispatch('initializeStore');
+        this.$store.dispatch('hydrate');
     }
 });

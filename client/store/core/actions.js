@@ -1,8 +1,6 @@
 
-export const initializeStore = ({ commit, state }) => {
-
-    let initialDataEl = document.getElementById("initialData");
-    let data = JSON.parse(initialDataEl.getAttribute('data'));
-    console.log(data);
-    commit('initializeStore', data);
+export const hydrate = ({ commit, state }) => {
+    let dehydrated = document.getElementById("dehydrated");
+    let data = JSON.parse(dehydrated.getAttribute('data'));
+    commit('hydrate', data);
 }

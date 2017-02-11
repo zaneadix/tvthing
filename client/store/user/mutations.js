@@ -20,5 +20,11 @@ export const recieveUser = (state, user) => {
 
 export const signOut = (state, user) => {
 
+    Vue.set(state.user, 'signingOut', true);
+}
+
+export const releaseUser = (state, user) => {
+
+    Vue.set(state.user, 'signingOut', false);
     Vue.set(state.user, 'account', false);
 }

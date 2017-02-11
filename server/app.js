@@ -19,7 +19,7 @@ import { REQUEST_LOGS,
          MONGO }     from './project-env';
 
 export const app = new Koa();
-const PORT = process.env.PORT || 1111;
+const PORT = process.env.PORT || 2222;
 
 
 /* istanbul ignore if */

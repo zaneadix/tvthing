@@ -8,12 +8,14 @@
             
             <div class="nav-right nav-menu">
                 <router-link to="/shows" class="nav-item">Shows</router-link>
-                <span v-if="!userAccount">
+                <span class="nav-conditional" v-if="!userAccount">
                     <router-link to="/sign-in" class="nav-item">Sign In</router-link>
                     <router-link to="/sign-up" class="nav-item">Sign Up</router-link>
                 </span>
-                <span v-else>
-                    <button class="nav-item">Sign Out</button>
+                <span class="nav-conditional" v-else>
+                    <span class="nav-item">
+                        <button class="button is-primary">Sign Out</button>
+                    </span>
                 </span>
             </div>
         </div>
@@ -39,3 +41,11 @@
     }
 
 </script>
+
+<style lang="scss" >
+   
+   .nav-conditional {
+        display: flex;
+   } 
+
+</style>
