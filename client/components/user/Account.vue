@@ -7,48 +7,60 @@
             <form id="account-info" v-on:submit.prevent>
 
                 <h1 class="title is-1">Account</h1>
-
-                <div class="control username-control">
-                    <label for="username">Username</label>
-                    <input type="text"
-                           class="input"
-                           name="username"
-                           disabled
-                           v-model="username"
-                           v-bind:class="{ 'is-danger': errors.has('username') }"
-                           v-validate="'required'">
-                    <p class="is-error">{{errors.first('username')}}</p>
-                </div>
                 
-                <div class="control email-control">
-                    <label for="email">Email</label>
-                    <input type="text"
-                           class="input"
-                           name="email"
-                           v-model="email"
-                           v-bind:class="{ 'is-danger': errors.has('email') }"
-                           v-validate="'required|email'">
-                    <p class="is-error">{{errors.first('email')}}</p>
-                </div>
+                <div class="is-clearfix">
 
-                <div class="control given-name-control">
-                    <label for="givenName">Given Name</label>
-                    <input type="text"
-                           class="input"
-                           name="givenName"
-                           v-model="givenName">
-                </div>
+                    <div class="control username-control">
+                        <label for="username">Username</label>
+                        <input type="text"
+                               class="input"
+                               name="username"
+                               disabled
+                               v-model="username"
+                               v-bind:class="{ 'is-danger': errors.has('username') }"
+                               v-validate="'required'">
+                        <p class="is-error">{{errors.first('username')}}</p>
+                    </div>
+                    
+                    <div class="control email-control">
+                        <label for="email">Email</label>
+                        <input type="text"
+                               class="input"
+                               name="email"
+                               v-model="email"
+                               v-bind:class="{ 'is-danger': errors.has('email') }"
+                               v-validate="'required|email'">
+                        <p class="is-error">{{errors.first('email')}}</p>
+                    </div>
 
-                <div class="control family-name-control">
-                    <label for="familyName">Family Name</label>
-                    <input type="text"
-                           class="input"
-                           name="familyName"
-                           v-model="familyName">
+                    <div class="control given-name-control">
+                        <label for="givenName">Given Name</label>
+                        <input type="text"
+                               class="input"
+                               name="givenName"
+                               v-model="givenName">
+                    </div>
+
+                    <div class="control family-name-control">
+                        <label for="familyName">Family Name</label>
+                        <input type="text"
+                               class="input"
+                               name="familyName"
+                               v-model="familyName">
+                    </div>
+
                 </div>
                 
                 <div class="control">
-                    <label for="familyName">Website</label>
+                    <label for="location">Location</label>
+                    <input type="text"
+                           class="input"
+                           name="location"
+                           v-model="location">
+                </div>
+                
+                <div class="control">
+                    <label for="website">Website</label>
                     <input type="text"
                            class="input"
                            name="website"
@@ -56,7 +68,7 @@
                 </div>
 
                 <div class="control">
-                    <label for="familyName">Bio</label>
+                    <label for="bio">Bio</label>
                     <textarea type="text"
                            class="input"
                            name="bio"

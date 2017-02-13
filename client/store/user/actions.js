@@ -6,7 +6,7 @@ const USER_PATH = '/user';
 const SIGN_UP_PATH   = `${AUTH_PATH}/sign-up`;
 const SIGN_IN_PATH   = `${AUTH_PATH}/sign-in`;
 const SIGN_OUT_PATH  = `${AUTH_PATH}/sign-out`;
-const ACCOUNT_PATH   = `${USER_PATH}/account`;
+const ACCOUNT_DETAILS_PATH = `${USER_PATH}/account-details`;
 
 function authenticate (commit, path, data) {
 
@@ -54,7 +54,9 @@ export const updateAccountDetails = ({commit, state}, details) => {
 
     commit('userUpdating');
 
-    return axios.post(ACCOUNT_PATH)
+    console.log(details);
+
+    return axios.post(ACCOUNT_DETAILS_PATH, details)
         .then(response => {
             commit('userUpdateSuccess', response.data);
             return response;

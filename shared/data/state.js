@@ -1,7 +1,6 @@
 
 export class ApplicationState {
     constructor () {
-        this.hydrated = false;
         this.history = [];
         this.user = {
             signingOut: false,

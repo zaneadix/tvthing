@@ -14,7 +14,6 @@ export const tmdbRouter = koaRouter()
 
     .use('*', async (ctx, next) => {
         ctx.state.url = buildURL(ctx.request.url);
-        console.log(ctx.state.url);
         await next();
     })
 
