@@ -2,14 +2,14 @@
     
     <div id="account">
         
-        <div class="container">
-            
-            <h1 class="title is-1">Account</h1>
+        <div class="container page-content">
 
-            <form v-on:submit.prevent>
+            <form id="account-info" v-on:submit.prevent>
 
-                <label for="username">Username</label>
-                <div class="control">
+                <h1 class="title is-1">Account</h1>
+
+                <div class="control username-control">
+                    <label for="username">Username</label>
                     <input type="text"
                            class="input"
                            name="username"
@@ -17,52 +17,61 @@
                            v-model="username"
                            v-bind:class="{ 'is-danger': errors.has('username') }"
                            v-validate="'required'">
-                    <p class="is-error">{{errors.first('username') || '&nbsp'}}</p>
+                    <p class="is-error">{{errors.first('username')}}</p>
                 </div>
                 
-                <label for="email">Email</label>
-                <div class="control">
+                <div class="control email-control">
+                    <label for="email">Email</label>
                     <input type="text"
                            class="input"
                            name="email"
                            v-model="email"
                            v-bind:class="{ 'is-danger': errors.has('email') }"
                            v-validate="'required|email'">
-                    <p class="is-error">{{errors.first('email') || '&nbsp'}}</p>
+                    <p class="is-error">{{errors.first('email')}}</p>
                 </div>
 
-                <label for="givenName">Given Name</label>
-                <div class="control">
+                <div class="control given-name-control">
+                    <label for="givenName">Given Name</label>
                     <input type="text"
                            class="input"
                            name="givenName"
                            v-model="givenName">
                 </div>
 
-                <label for="familyName">Family Name</label>
-                <div class="control">
+                <div class="control family-name-control">
+                    <label for="familyName">Family Name</label>
                     <input type="text"
                            class="input"
                            name="familyName"
                            v-model="familyName">
                 </div>
-
-                <label for="familyName">Location</label>
-                <div class="control">
-                    <input type="text"
-                           class="input"
-                           name="location"
-                           v-model="location">
-                </div>
                 
-                <label for="familyName">Website</label>
                 <div class="control">
+                    <label for="familyName">Website</label>
                     <input type="text"
                            class="input"
                            name="website"
                            v-model="website">
                 </div>
 
+                <div class="control">
+                    <label for="familyName">Bio</label>
+                    <textarea type="text"
+                           class="input"
+                           name="bio"
+                           v-model="bio">
+                </div>
+
+                <div class="control">
+                    <button class="button is-primary"
+                            v-bind:class="{ 'is-loading': updating }"
+                            v-bind:disabled="errors.any()"
+                            v-on:click.capture="submitAccountUpdate">
+                        Update Account Details
+                    </button>
+                    <p class="error-response is-error"></p>
+                </div>
 
             </form>
 
@@ -93,13 +102,44 @@
             }
         },
 
+        watch: {
+            account: () => {}
+        },
+
         computed: {
             ...mapState({
-                account: state => {
-                    console.log(state.user.account);
+                updating: function (state) {
+                    return state.user.updating;
+                },
+                account: function (state) {
+                    let account = state.user.account;
+                    this.username = `${account.username}`;
+                    this.email = `${account.email}`;
+                    this.givenName = `${account.givenName}`;
+                    this.familyName = `${account.familyName}`;
+                    this.location = `${account.location}`;
+                    this.website = `${account.website}`;
+                    this.bio = `${account.bio}`;
                     return state.user.account;
                 }
             })
+        },
+
+        methods: {
+            ...mapActions([
+                'updateAccountDetails'
+            ]),
+
+            submitAccountUpdate: function () {
+                this.updateAccountDetails({
+                    email: this.email,
+                    givenName: this.givenName,
+                    familyName: this.familyName,
+                    location: this.location,
+                    website: this.website,
+                    bio: this.bio
+                });
+            }
         }
     }
 
@@ -108,5 +148,22 @@
 
 <style lang="scss" scoped>
     
+    #account-info {
+        width: 50%;
+
+        .username-control,
+        .email-control,
+        .given-name-control,
+        .family-name-control {
+            width: 49%;
+            display: inline-block;
+            float: left;
+        }
+
+        .email-control,
+        .family-name-control {
+            float: right;
+        }
+    }
 
 </style>

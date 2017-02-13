@@ -10,7 +10,7 @@ import winston    from 'winston';
 import path       from 'path';
 import co         from 'co';
 
-import api                from './routes/api';
+import api                from './api';
 import setupAuth          from './auth';
 import { errorResponder } from './middleware/error-responder';
 import { indexLoader }    from './middleware/index-loader';

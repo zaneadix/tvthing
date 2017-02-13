@@ -1,5 +1,5 @@
 import UserProfile from '../../components/user/UserProfile';
-import Account from '../../components/user/Account';
+import Account     from '../../components/user/Account';
 
 const userRoutes = [{ 
     path: '/user-profile/:username',
@@ -8,7 +8,8 @@ const userRoutes = [{
 },{
     path: '/account',
     name: 'account',
-    component: Account
+    component: Account,
+    meta: { requireAuth: true }
 }]
 
 export default userRoutes;

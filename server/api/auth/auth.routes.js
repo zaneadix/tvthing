@@ -29,8 +29,12 @@ export const authRouter = koaRouter()
     })
 
     .post('/sign-out', (ctx, next) => {
+        console.log('BEFORE', ctx.state.user);
         ctx.logout();
+        ctx.session = null;
+        console.log('AFTER', ctx.state.user);
         ctx.body = { success: true };
+        next();
     })
 
     // .post('/sign-out', async (ctx, next) => {
@@ -47,12 +51,3 @@ export const authRouter = koaRouter()
     // .post('/validate', async () => {
 
     // })
-
-    .get('/is-authenticated', (ctx, next) => {
-        if (ctx.isAuthenticated()) {
-            ctx.body = {authenticated: true}
-        } else {
-            ctx.body = {authenticated: false}
-        }
-        return next();
-    })

@@ -22,8 +22,5 @@ new Vue({
     store,
     template: `<Core></Core>`,
     components: { Core },
-    data: { bus },
-    created () {
-        this.$store.dispatch('hydrate');
-    }
+    data: { bus }
 });

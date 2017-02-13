@@ -1,5 +1,6 @@
 import Vue       from 'vue';
 import VueRouter from 'vue-router';
+import store     from '../store';
 
 import baseRoutes     from './routes/base';
 import authRoutes     from './routes/auth';
@@ -18,6 +19,21 @@ const router = new VueRouter({
         ...discoverRoutes,
         ...showRoutes
     ]
+});
+
+// global route guarding
+// make sure users are signed in 
+// if necessary 
+router.beforeEach((to, from, next) => {
+    if (to.meta.requireAuth) {
+        if (store.state && store.state.user.account) {
+            next();
+        } else {
+            next('/sign-in');
+        }
+    } else {
+        next();
+    }
 });
 
 export default router;

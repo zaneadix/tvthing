@@ -1,16 +1,21 @@
 
-export default {
-    history: [],
-    user: {
-        signingOut: false,
-        authenticating: false,
-        account: false
-    },
-    discover: {
-        loading: false,
-        results: []
-    },
-    show: {
-        details: {}
+export class ApplicationState {
+    constructor () {
+        this.hydrated = false;
+        this.history = [];
+        this.user = {
+            signingOut: false,
+            updating: false,
+            updateFailure: false,
+            authenticating: false,
+            account: false
+        };
+        this.discover = {
+            loading: false,
+            results: []
+        };
+        this.show = {
+            details: {}
+        };
     }
 }

@@ -13,8 +13,9 @@
                     <router-link to="/sign-up" class="nav-item">Sign Up</router-link>
                 </span>
                 <span class="nav-conditional" v-else>
+                    <router-link to="/account" class="nav-item">Account</router-link>
                     <span class="nav-item">
-                        <button class="button is-primary">Sign Out</button>
+                        <button class="button is-primary" v-on:click="executeSignOut()">Sign Out</button>
                     </span>
                 </span>
             </div>
@@ -37,6 +38,22 @@
                     return state.user.account;
                 }
             })
+        },
+
+        methods: {
+
+            ...mapActions([
+                'signOut'
+            ]),
+
+            executeSignOut: function () {
+                this.signOut()
+                    .then((response) => {
+                        if (response.status === 200) {
+                            this.$router.push('/');
+                        }
+                    })
+            }
         }
     }
 

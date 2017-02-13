@@ -1,4 +1,3 @@
-
 import Authenticate from '../../components/auth/Authenticate';
 
 const authRoutes = [{ 

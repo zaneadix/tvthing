@@ -1,0 +1,13 @@
+export const HYDRATE                = 'HYDRATE';
+export const AUTHENTICATE           = 'AUTHENTICATE';
+export const AUTHENTICATE_FAILURE   = 'AUTHENTICATE_FAILURE';
+export const RECIEVE_USER           = 'RECIEVE_USER';
+export const SIGN_OUT               = 'SIGN_OUT';
+export const RELEASE_USER           = 'RELEASE_USER';
+export const RETRIEVE_SHOWS         = 'RETRIEVE_SHOWS';
+export const RECIEVE_SHOWS          = 'RECIEVE_SHOWS';
+export const RETIREVE_SHOW_DETAIL   = 'RETIREVE_SHOW_DETAIL';
+export const RECIEVE_SHOW_DETAIL    = 'RECIEVE_SHOW_DETAIL';
+export const FAIL_SHOW_DETAIL       = 'FAIL_SHOW_DETAIL';
+export const RETRIEVE_SEASON_DETAIL = 'RETRIEVE_SEASON_DETAIL';
+export const RECIEVE_SEASON_DETAIL  = 'RECIEVE_SEASON_DETAIL';
