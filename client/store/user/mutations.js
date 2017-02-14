@@ -34,7 +34,7 @@ export const userUpdating = (state, user) => {
 }
 
 export const userUpdateSuccess = (state, user) => {
-    Vue.set(state.user, 'updating', true);
+    Vue.set(state.user, 'updating', false);
     Vue.set(state.user, 'account', Object.assign(new User(), state.user.account, user));
 }
 

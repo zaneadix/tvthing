@@ -5,7 +5,7 @@ import Core      from './components/core/Core';
 import store     from './store';
 import router    from './router';
 
-Vue.use(VeeValidate);
+Vue.use(VeeValidate, { delay: 300 });
 
 // Define event bus for 
 // VERY SIMPLE COMMUNICATIONS ONLY

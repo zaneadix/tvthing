@@ -5,7 +5,6 @@ import koaStatic  from 'koa-static';
 import helmet     from 'koa-helmet';
 import render     from 'koa-ejs';
 import redisStore from 'koa-redis';
-import proxy      from 'koa-proxy';
 import mongoose   from 'mongoose';
 import winston    from 'winston';
 import path       from 'path';

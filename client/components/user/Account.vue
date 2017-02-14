@@ -16,10 +16,9 @@
                                class="input"
                                name="username"
                                disabled
-                               v-model="username"
+                               v-model="accountDetails.username"
                                v-bind:class="{ 'is-danger': errors.has('username') }"
                                v-validate="'required'">
-                        <p class="is-error">{{errors.first('username')}}</p>
                     </div>
                     
                     <div class="control email-control">
@@ -27,10 +26,9 @@
                         <input type="text"
                                class="input"
                                name="email"
-                               v-model="email"
+                               v-model="accountDetails.email"
                                v-bind:class="{ 'is-danger': errors.has('email') }"
                                v-validate="'required|email'">
-                        <p class="is-error">{{errors.first('email')}}</p>
                     </div>
 
                     <div class="control given-name-control">
@@ -38,7 +36,7 @@
                         <input type="text"
                                class="input"
                                name="givenName"
-                               v-model="givenName">
+                               v-model="accountDetails.givenName">
                     </div>
 
                     <div class="control family-name-control">
@@ -46,7 +44,7 @@
                         <input type="text"
                                class="input"
                                name="familyName"
-                               v-model="familyName">
+                               v-model="accountDetails.familyName">
                     </div>
 
                 </div>
@@ -56,7 +54,7 @@
                     <input type="text"
                            class="input"
                            name="location"
-                           v-model="location">
+                           v-model="accountDetails.location">
                 </div>
                 
                 <div class="control">
@@ -64,7 +62,9 @@
                     <input type="text"
                            class="input"
                            name="website"
-                           v-model="website">
+                           v-model="accountDetails.website"
+                           v-bind:class="{ 'is-danger': errors.has('website') }"
+                           v-validate="'url'">
                 </div>
 
                 <div class="control">
@@ -72,7 +72,13 @@
                     <textarea type="text"
                            class="input"
                            name="bio"
-                           v-model="bio">
+                           v-model="accountDetails.bio">
+                </div>
+
+                <div class="errors"
+                     v-if="errors.any()">
+                    <p class="is-error"
+                       v-for="error in errors.all()">{{ error }}</p>
                 </div>
 
                 <div class="control">
@@ -82,7 +88,8 @@
                             v-on:click.capture="submitAccountUpdate">
                         Update Account Details
                     </button>
-                    <p class="error-response is-error"></p>
+                    <p class="error-response is-error"
+                       v-if="failure">{{failureMessage}}</p>
                 </div>
 
             </form>
@@ -104,13 +111,18 @@
 
         data: () => {
             return {
-                username: '',
-                email: '',
-                givenName: '',
-                familyName: '',
-                location: '',
-                website: '',
-                bio: ''
+                failure: false,
+                success: false,
+                failureMessage: '',
+                accountDetails: {
+                    username: '',
+                    email: '',
+                    givenName: '',
+                    familyName: '',
+                    location: '',
+                    website: '',
+                    bio: ''
+                }
             }
         },
 
@@ -125,13 +137,13 @@
                 },
                 account: function (state) {
                     let account = state.user.account;
-                    this.username = `${account.username}`;
-                    this.email = `${account.email}`;
-                    this.givenName = `${account.givenName}`;
-                    this.familyName = `${account.familyName}`;
-                    this.location = `${account.location}`;
-                    this.website = `${account.website}`;
-                    this.bio = `${account.bio}`;
+                    this.accountDetails.username = `${account.username}`;
+                    this.accountDetails.email = `${account.email}`;
+                    this.accountDetails.givenName = `${account.givenName}`;
+                    this.accountDetails.familyName = `${account.familyName}`;
+                    this.accountDetails.location = `${account.location}`;
+                    this.accountDetails.website = `${account.website}`;
+                    this.accountDetails.bio = `${account.bio}`;
                     return state.user.account;
                 }
             })
@@ -144,13 +156,24 @@
 
             submitAccountUpdate: function () {
                 this.updateAccountDetails({
-                    email: this.email,
-                    givenName: this.givenName,
-                    familyName: this.familyName,
-                    location: this.location,
-                    website: this.website,
-                    bio: this.bio
-                });
+                    email: this.accountDetails.email,
+                    givenName: this.accountDetails.givenName,
+                    familyName: this.accountDetails.familyName,
+                    location: this.accountDetails.location,
+                    website: this.accountDetails.website,
+                    bio: this.accountDetails.bio
+                })
+                .then((response) => {
+                    if (response.status == 200) {
+                        this.failure = false;
+                        this.success = true;
+                        this.failureMessage = '';
+                    } else {
+                        this.failure = true;
+                        this.success = false;
+                        this.failureMessage = response.data;
+                    }
+                });;
             }
         }
     }

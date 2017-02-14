@@ -4983,7 +4983,7 @@ a.panel-block:hover {
   display: flex;
 }
 
-#auth[data-v-f64b150a] {
+#auth[data-v-7604b01f] {
   display: flex;
   min-height: 80vh;
   -webkit-align-items: center;
@@ -4991,16 +4991,16 @@ a.panel-block:hover {
   -webkit-justify-content: center;
   justify-content: center;
 }
-#auth .auth-form[data-v-f64b150a] {
+#auth .auth-form[data-v-7604b01f] {
     min-width: 500px;
 }
-#auth .auth-form .control p.is-error[data-v-f64b150a] {
+#auth .auth-form .control p.is-error[data-v-7604b01f] {
       margin-bottom: 1em;
 }
-#auth .auth-form .control p.error-response[data-v-f64b150a] {
+#auth .auth-form .control p.error-response[data-v-7604b01f] {
       text-align: center;
 }
-#auth .auth-form .control button[data-v-f64b150a] {
+#auth .auth-form .control button[data-v-7604b01f] {
       display: block;
       margin: 0 auto;
       width: 80%;
@@ -5028,36 +5028,36 @@ a.panel-block:hover {
 
 
 
-#account-info[data-v-689ee09a] {
+#account-info[data-v-50c8e114] {
   width: 50%;
 }
-#account-info .username-control[data-v-689ee09a],
-  #account-info .email-control[data-v-689ee09a],
-  #account-info .given-name-control[data-v-689ee09a],
-  #account-info .family-name-control[data-v-689ee09a] {
+#account-info .username-control[data-v-50c8e114],
+  #account-info .email-control[data-v-50c8e114],
+  #account-info .given-name-control[data-v-50c8e114],
+  #account-info .family-name-control[data-v-50c8e114] {
     width: 49%;
     display: inline-block;
     float: left;
 }
-#account-info .email-control[data-v-689ee09a],
-  #account-info .family-name-control[data-v-689ee09a] {
+#account-info .email-control[data-v-50c8e114],
+  #account-info .family-name-control[data-v-50c8e114] {
     float: right;
 }
 
-#discover-shows .show-card[data-v-53e4df6e] {
+#discover-shows .show-card[data-v-450f1a12] {
   border: 1px solid #C2C2C2;
   border-radius: 5px;
   background-color: #FFF;
   overflow: hidden;
   cursor: pointer;
 }
-#discover-shows .show-card .details[data-v-53e4df6e] {
+#discover-shows .show-card .details[data-v-450f1a12] {
     padding: .5em;
 }
 
-#show-detail .hero[data-v-140175ee] {
+#show-detail .hero[data-v-355ad6dc] {
   background-size: cover;
 }
-#show-detail .hero .nav-left .nav-item[data-v-140175ee] {
+#show-detail .hero .nav-left .nav-item[data-v-355ad6dc] {
     background-color: whitesmoke;
 }
