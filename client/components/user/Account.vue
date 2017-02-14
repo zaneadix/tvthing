@@ -83,10 +83,10 @@
 
                 <div class="control">
                     <button class="button is-primary"
-                            v-bind:class="{ 'is-loading': updating }"
+                            v-bind:class="{ 'is-loading': updating, 'is-danger': failure }"
                             v-bind:disabled="errors.any()"
                             v-on:click.capture="submitAccountUpdate">
-                        Update Account Details
+                        {{ failure ? 'Try Again' : 'Update Account Details' }}
                     </button>
                     <p class="error-response is-error"
                        v-if="failure">{{failureMessage}}</p>

@@ -56,12 +56,13 @@ export const updateAccountDetails = ({commit, state}, details) => {
 
     console.log(details);
 
-    return axios.post(ACCOUNT_DETAILS_PATH, details)
+    return axios.put(ACCOUNT_DETAILS_PATH, details)
         .then(response => {
             commit('userUpdateSuccess', response.data);
             return response;
         })
         .catch(error => {
+            commit('userUpdateFailure');
             return error.response;
         })
 };

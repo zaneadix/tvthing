@@ -2,6 +2,9 @@
 export class ApplicationState {
     constructor () {
         this.history = [];
+        this.config = {
+            tmdb: false
+        },
         this.user = {
             signingOut: false,
             updating: false,

@@ -1,6 +1,4 @@
 import passport    from 'koa-passport';
-import convert     from 'koa-convert';
-import session     from 'koa-generic-session';
 import local       from 'passport-local';
 import bcrypt      from 'bcrypt';
 import createError from 'http-errors';
@@ -72,9 +70,3 @@ passport.use('sign-in', new LocalStrategy({ passReqToCallback: true }, (request,
         return done(null, user);
     });
 }));
-
-export default (app) => {
-    app.use(convert(session()));
-    app.use(convert(passport.initialize()));
-    app.use(convert(passport.session()));
-}

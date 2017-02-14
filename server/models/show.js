@@ -1,21 +1,21 @@
 import mongoose from 'mongoose';
 
 export default mongoose.model('Show', new mongoose.Schema({
-    backdrop_path: String,
-    created_by: Array,
-    episode_run_time: Array,
-    genres: Array,
-    homepage: String,
-    in_production: Boolean,
-    languages: Array,
-    last_air_data: String,
-    name: String,
-    networks: Array,
-    number_of_episodes: Number,
-    number_of_seasons: Number,
-    origin_country: Array,
-    overview: String,
-    id: Number
+    backdrop_path      : String,
+    created_by         : Array,
+    episode_run_time   : Array,
+    genres             : Array,
+    homepage           : String,
+    in_production      : Boolean,
+    languages          : Array,
+    last_air_data      : String,
+    name               : String,
+    networks           : Array,
+    number_of_episodes : Number,
+    number_of_seasons  : Number,
+    origin_country     : Array,
+    overview           : String,
+    id                 : Number
 }));
 
 // this.id = id;
